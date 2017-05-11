@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es2015", "dom"],
+    "outDir": "dist",
+    "declaration": true
+  },
+  "include": [
+    "src/*.ts"
+  ],
+  "angularCompilerOptions": {
+    "genDir": "aot"
+  }
+}

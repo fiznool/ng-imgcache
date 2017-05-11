@@ -1,0 +1,44 @@
+{
+  "name": "ng-imgcache",
+  "version": "1.0.0",
+  "description": "Angular 2+ module to cache images for offline use.",
+  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "rimraf dist && rimraf aot && ngc",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fiznool/ng-imgcache.git"
+  },
+  "keywords": [
+    "angular",
+    "imgcache",
+    "offline",
+    "cordova",
+    "ionic"
+  ],
+  "author": "Tom Spencer <fiznool@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fiznool/ng-imgcache/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/fiznool/ng-imgcache#readme",
+  "devDependencies": {
+    "@angular/common": "^4.1.2",
+    "@angular/compiler": "^4.1.2",
+    "@angular/compiler-cli": "^4.1.2",
+    "@angular/core": "^4.1.2",
+    "@angular/forms": "^4.1.2",
+    "@angular/platform-browser": "^4.1.2",
+    "rimraf": "^2.6.1",
+    "rxjs": "^5.4.0",
+    "typescript": "^2.3.2",
+    "zone.js": "^0.8.10"
+  }
+}
