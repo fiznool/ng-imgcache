@@ -12,13 +12,15 @@ npm install ng-imagecache
 
 ## Usage
 
-### Angular 2+
-
-TBC
-
 ### Ionic 2+
 
-**1. Import the `ImgCacheModule`:**
+**1. Install Cordova plugins:**
+
+```
+cordova plugin add cordova-plugin-file cordova-plugin-file-transfer
+```
+
+**2. Import the `ImgCacheModule`:**
 
 ``` ts
 //app.module.ts
@@ -44,7 +46,7 @@ import { AppComponent }  from './app.component';
 export class AppModule {}
 ```
 
-**2. Initialise the cache in your `AppComponent`:**
+**3. Initialise the cache in your `AppComponent`:**
 
 ``` ts
 // app.component.ts
@@ -79,7 +81,7 @@ export class MyApp {
 }
 ```
 
-**3. Use the directive in your component templates:**
+**4. Use the directive in your component templates:**
 
 ``` ts
 import { Component } from '@angular/core';
@@ -101,7 +103,15 @@ export class AppComponent {};
 
 That's it!
 
-Image URLs that are specified in a `img-cache-src` or `img-cache-bg-url` attribute will be downloaded and cached for subsequent offline use.
+
+
+### Angular 2+
+
+TBC: a very similar process to above.
+
+## How it works
+
+Image URLs that are specified in a `img-cache-src` or `img-cache-bg-url` attribute will be downloaded and cached for subsequent offline use by the included `imgcache.js` library.
 
 Tip: make sure you use `img-cache-src` with `<img>` tags, as this will set the `src` attribute of the `<img>` tag to the cached image. For other elements, you can use the `img-cache-bg-url` attribute, which will set the `background-image` style of the element to point to the cached image.
 
