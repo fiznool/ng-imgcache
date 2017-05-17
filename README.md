@@ -7,7 +7,7 @@ Angular 2+ / Ionic 2+ module to cache images for offline use.
 ## Installation
 
 ```
-npm install ng-imagecache
+npm install ng-imgcache
 ```
 
 ## Usage
