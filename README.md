@@ -25,23 +25,35 @@ cordova plugin add cordova-plugin-file cordova-plugin-file-transfer
 ``` ts
 //app.module.ts
 
-import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }   from '@angular/forms';
+import { ErrorHandler, NgModule } from '@angular/core';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
 import { ImgCacheModule } from 'ng-imgcache';
 
-import { AppComponent }  from './app.component';
+import { MyApp } from './app.component';
+import { HomePage } from '../pages/home/home';
 
 @NgModule({
+  declarations: [
+    MyApp,
+    HomePage
+  ], 
   imports: [
     BrowserModule,
-    FormsModule,
-    ImgCacheModule
+    IonicModule.forRoot(MyApp) 
   ],
-  declarations: [
-    AppComponent
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp,
+    HomePage
   ],
-  bootstrap: [ AppComponent ]
+  providers: [
+    StatusBar,
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ] 
 })
 export class AppModule {}
 ```
@@ -81,7 +93,33 @@ export class MyApp {
 }
 ```
 
-**4. Use the directive in your component templates:**
+**4. (Optional) Import the `ImgCacheModule` in your lazy loaded page modules:**
+
+``` ts
+//lazy.module.ts
+
+import { NgModule }      from '@angular/core';
+import { IonicPageModule } from 'ionic-angular';
+import { ImgCacheModule } from 'ng-imgcache';
+
+import { LazyPage }  from './lazy';
+
+@NgModule({
+  declarations: [
+    LazyPage
+  ],
+  imports: [
+    IonicPageModule.forChild(LazyPage),
+    ImgCacheModule.forChild()
+  ],
+  exports: [
+    LazyPage
+  ]
+})
+export class LazyPageModule {}
+```
+
+**5. Use the directive in your component templates:**
 
 ``` ts
 import { Component } from '@angular/core';
