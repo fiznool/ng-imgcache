@@ -14,12 +14,12 @@ export class ImgCacheModule {
       providers: [
         ImgCacheService
       ]
-    }
+    };
   }
 
   static forChild(): ModuleWithProviders {
     return {
       ngModule: ImgCacheModule
-    }
+    };
   }
 }
