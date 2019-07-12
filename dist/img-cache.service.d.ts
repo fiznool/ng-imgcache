@@ -17,6 +17,6 @@ export declare class ImgCacheService {
     fetchFromCache(url: string): Promise<string>;
     clearCache(): Promise<null>;
     private checkInitialised;
-    private cacheIfNecessary;
+    cacheIfNecessary(url: string): Promise<null>;
     replaceWithCached(url: string): Promise<string>;
 }
