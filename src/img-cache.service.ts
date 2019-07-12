@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as ImgCache from 'imgcache.js';
+import * as ImgCache from '@chrisben/imgcache.js';
 
 export interface ImgCacheConfig {
   debug?: boolean,                 /* call the log method ? */
