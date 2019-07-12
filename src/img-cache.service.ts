@@ -66,7 +66,7 @@ export class ImgCacheService {
     })
   }
 
-  private replaceWithCached(url: string): Promise<string> {
+  public replaceWithCached(url: string): Promise<string> {
     return new Promise((resolve, reject) => {
       ImgCache.getCachedFileBase64Data(
         url,
