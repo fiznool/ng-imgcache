@@ -51,7 +51,7 @@ export class ImgCacheService {
     }
   }
 
-  private cacheIfNecessary(url: string): Promise<null> {
+  public cacheIfNecessary(url: string): Promise<null> {
     return new Promise((resolve, reject) => {
       // Check if image is cached
       ImgCache.isCached(url, (path, success) => {
